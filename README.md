@@ -4,6 +4,57 @@ This is the main document for the curriculum of learning Claude Code. It outline
 
 ---
 
+## Environment Setup
+
+This repository contains a self-contained learning environment with a React frontend and a Node.js backend terminal.
+
+### Prerequisites
+
+Before running the environment, ensure you have the following installed:
+
+*   **Node.js**: Version 18 or higher.
+*   **Git**: For version control.
+*   **Claude Code**: Installed globally (`npm install -g @anthropic-ai/claude-code`).
+*   **Anthropic API Key**: Required to use Claude Code.
+
+### Quick Start
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/kenken64/Learn-Claude-Code.git
+    cd Learn-Claude-Code
+    ```
+
+2.  **Start the Environment:**
+    
+    *   **Windows (PowerShell):**
+        ```powershell
+        .\scripts\start.ps1
+        ```
+    
+    *   **Mac/Linux (Bash):**
+        ```bash
+        chmod +x scripts/start.sh
+        ./scripts/start.sh
+        ```
+
+    The script will automatically:
+    *   Install dependencies for both frontend and backend.
+    *   Launch the Backend Server (Port 3001).
+    *   Launch the Frontend Application (Port 5173).
+
+3.  **Access the Curriculum:**
+    Open your browser to `http://localhost:5173` (if it doesn't open automatically).
+
+### Stopping the Environment
+
+To stop all running processes:
+
+*   **Windows:** `.\scripts\stop.ps1`
+*   **Mac/Linux:** `./scripts/stop.sh`
+
+---
+
 ## Course Overview
 
 | Attribute | Details |
