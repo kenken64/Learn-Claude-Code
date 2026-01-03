@@ -19,11 +19,11 @@ This is the main document for the curriculum of learning Claude Code. It outline
 
 | Module | Workshops | Description |
 |--------|-----------|-------------|
-| **Module 1: Foundations** | **Workshop 1:** Getting Started with Claude Code | Setup, basic commands, and first interactions. |
-| **Module 2: Core Capabilities** | **Workshop 3:** Navigating Codebases<br>**Workshop 4:** Code Generation & Editing<br>**Workshop 5:** Testing & Debugging | Core coding tasks, file operations, and debugging. |
-| **Module 3: Effective Prompting** | **Workshop 2:** Mastering Prompts for Code<br>**Workshop 10:** Anti-Patterns & Troubleshooting | Advanced prompting, context management, and error handling. |
-| **Module 4: Advanced Features** | **Workshop 6:** Git Integration<br>**Workshop 7:** Custom Configuration<br>**Workshop 8:** Agentic Workflows | Git workflows, customization, and autonomous agents. |
-| **Module 5: Real-World Projects** | **Workshop 9:** CI/CD Integration<br>**Workshop 11:** Domain-Specific Applications<br>**Workshop 12:** Capstone Project | DevOps, specialized tracks, and final capstone project. |
+| **Module 1: Foundations** | [**Workshop 1:** Getting Started with Claude Code](Workshop1/README.md) | Setup, basic commands, and first interactions. |
+| **Module 2: Core Capabilities** | [**Workshop 3:** Navigating Codebases](Workshop3/README.md)<br>[**Workshop 4:** Code Generation & Editing](Workshop4/README.md)<br>[**Workshop 5:** Testing & Debugging](Workshop5/README.md) | Core coding tasks, file operations, and debugging. |
+| **Module 3: Effective Prompting** | [**Workshop 2:** Mastering Prompts for Code](Workshop2/README.md)<br>[**Workshop 10:** Anti-Patterns & Troubleshooting](Workshop10/README.md) | Advanced prompting, context management, and error handling. |
+| **Module 4: Advanced Features** | [**Workshop 6:** Git Integration](Workshop6/README.md)<br>[**Workshop 7:** Custom Configuration](Workshop7/README.md)<br>[**Workshop 8:** Agentic Workflows](Workshop8/README.md) | Git workflows, customization, and autonomous agents. |
+| **Module 5: Real-World Projects** | [**Workshop 9:** CI/CD Integration](Workshop9/README.md)<br>[**Workshop 11:** Domain-Specific Applications](Workshop11/README.md)<br>[**Workshop 12:** Capstone Project](Workshop12/README.md) | DevOps, specialized tracks, and final capstone project. |
 
 ---
 
