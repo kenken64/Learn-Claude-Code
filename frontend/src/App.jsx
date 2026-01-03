@@ -34,6 +34,51 @@ function App() {
     fetchWorkshop();
   }, [selectedWorkshop]);
 
+  const handleDoubleClick = (e) => {
+    let target = e.target;
+    
+    // Don't highlight the container itself
+    if (target.classList.contains('prose')) return;
+
+    // Find the nearest block-level element
+    const blockTags = ['P', 'H1', 'H2', 'H3', 'H4', 'H5', 'H6', 'LI', 'PRE', 'BLOCKQUOTE', 'TR'];
+    
+    while (target && target.parentElement && !target.parentElement.classList.contains('prose')) {
+      if (blockTags.includes(target.tagName)) break;
+      target = target.parentElement;
+    }
+
+    // Toggle highlight
+    if (target) {
+      // Check if it's already highlighted
+      if (target.dataset.highlighted === "true") {
+        target.style.backgroundColor = '';
+        target.style.borderRadius = '';
+        target.style.padding = '';
+        target.style.boxShadow = '';
+        delete target.dataset.highlighted;
+      } else {
+        // Clear existing highlights to act as a single bookmark
+        const highlighted = document.querySelectorAll('[data-highlighted="true"]');
+        highlighted.forEach(el => {
+            el.style.backgroundColor = '';
+            el.style.borderRadius = '';
+            el.style.padding = '';
+            el.style.boxShadow = '';
+            delete el.dataset.highlighted;
+        });
+
+        // Apply new highlight
+        target.style.backgroundColor = 'rgba(234, 179, 8, 0.15)'; // Yellow-500 with low opacity
+        target.style.borderRadius = '4px';
+        target.style.padding = '4px 8px';
+        target.style.boxShadow = 'inset 4px 0 0 0 #eab308'; // Inner left border marker
+        target.style.transition = 'all 0.2s ease';
+        target.dataset.highlighted = "true";
+      }
+    }
+  };
+
   return (
     <div className="flex h-screen bg-[#0d1117] text-gray-300 overflow-hidden font-sans">
       {/* Sidebar */}
@@ -108,7 +153,10 @@ function App() {
         {/* Content Area */}
         <div className="flex-1 overflow-hidden relative">
           <div className={`h-full overflow-y-auto p-8 bg-[#0d1117] custom-scrollbar ${activeTab === 'curriculum' ? 'block' : 'hidden'}`}>
-            <div className="max-w-4xl mx-auto prose prose-invert prose-lg prose-headings:text-gray-100 prose-p:text-gray-300 prose-a:text-blue-400 prose-code:text-orange-300 prose-pre:bg-[#161b22] prose-pre:border prose-pre:border-gray-800">
+            <div 
+              className="max-w-4xl mx-auto prose prose-invert prose-lg prose-headings:text-gray-100 prose-p:text-gray-300 prose-a:text-blue-400 prose-code:text-orange-300 prose-pre:bg-[#161b22] prose-pre:border prose-pre:border-gray-800"
+              onDoubleClick={handleDoubleClick}
+            >
               {loading ? (
                 <div className="flex items-center justify-center h-64">
                   <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-orange-500"></div>
