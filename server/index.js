@@ -13,26 +13,12 @@ const __dirname = dirname(__filename);
 
 const sessions = new Map();
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const app = express();
 app.use(cors());
 
-// Serve workshop content
-app.get('/api/workshops/:id', (req, res) => {
-  const workshopId = req.params.id;
-  const workshopPath = resolve(__dirname, `../frontend/public/workshops/Workshop${workshopId}/README.md`);
-  
-  if (existsSync(workshopPath)) {
-    try {
-      const content = readFileSync(workshopPath, 'utf-8');
-      res.json({ content });
-    } catch (error) {
-      res.status(500).json({ error: 'Failed to read workshop file' });
-    }
-  } else {
-    res.status(404).json({ error: 'Workshop not found' });
-  }
-});
+// Serve workshop content - DEPRECATED: Frontend fetches static files directly
+// app.get('/api/workshops/:id', (req, res) => { ... });
 
 const server = http.createServer(app);
 const wss = new WebSocketServer({ server });

@@ -16,16 +16,17 @@ function App() {
     const fetchWorkshop = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`http://localhost:3001/api/workshops/${selectedWorkshop}`);
+        // Fetch directly from static files served by public folder
+        const response = await fetch(`/workshops/Workshop${selectedWorkshop}/README.md`);
         if (response.ok) {
-          const data = await response.json();
-          setMarkdownContent(data.content);
+          const text = await response.text();
+          setMarkdownContent(text);
         } else {
           setMarkdownContent('# Workshop not found');
         }
       } catch (error) {
         console.error('Error fetching workshop:', error);
-        setMarkdownContent('# Error loading workshop content. Ensure the server is running.');
+        setMarkdownContent('# Error loading workshop content.');
       } finally {
         setLoading(false);
       }

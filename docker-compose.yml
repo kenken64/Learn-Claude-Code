@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  server:
+    build: ./server
+    ports:
+      - "3001:3001"
+    environment:
+      - PORT=3001
+    volumes:
+      # Persist the playground data
+      - playground_data:/playground
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - server
+
+volumes:
+  playground_data:
