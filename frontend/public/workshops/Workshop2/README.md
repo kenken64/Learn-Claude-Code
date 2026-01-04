@@ -9,8 +9,10 @@
 Clone the workshop repository:
 
 ```bash
-git clone https://github.com/your-org/claude-code-workshop
-cd claude-code-workshop/module-2
+git clone https://github.com/kenken64/buggy-ecommerce
+cd buggy-ecommerce
+npm i
+npm run dev
 ```
 
 **Bad Prompt:**
