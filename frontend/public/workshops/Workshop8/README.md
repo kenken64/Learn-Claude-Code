@@ -69,9 +69,37 @@ You: Show me what you've created so far.
 You: Pause here - let me review before continuing.
 ```
 
-### Part C: Headless Operations (60 mins)
+### Part C: Leveraging Subagents (45 mins)
 
-#### Activity 8.6: CLI Automation
+#### Activity 8.6: The Research Subagent
+
+Claude Code can spawn specialized subagents to perform deep research, documentation searches, or complex analysis without cluttering the main conversation context.
+
+**Triggering a Subagent:**
+
+```
+You: Research the latest React 19 features regarding Server Components 
+     and summarize how we can migrate our current App.jsx to use them.
+```
+
+**Observation:**
+1.  Claude recognizes a research-heavy task.
+2.  Spawns a "Research Subagent".
+3.  Subagent performs multiple searches, reads web pages, and synthesizes findings.
+4.  Subagent reports back to the main agent.
+5.  Main agent uses this knowledge to answer or act.
+
+#### Activity 8.7: Multi-Agent Debugging
+
+```
+You: I'm seeing a weird race condition in the database. 
+     Launch a subagent to investigate the logs and potential locking issues 
+     while you review the transaction logic in the code.
+```
+
+### Part D: Headless Operations (60 mins)
+
+#### Activity 8.8: CLI Automation
 
 ```bash
 # Run Claude Code non-interactively
@@ -84,7 +112,7 @@ Output a summary of created issues.
 EOF
 ```
 
-#### Activity 8.7: Batch Processing
+#### Activity 8.9: Batch Processing
 
 ```bash
 # Process multiple tasks from file
@@ -96,9 +124,9 @@ cat tasks.txt | claude --batch
 # 3. Update README with current API endpoints
 ```
 
-### Part D: Safety and Guardrails (45 mins)
+### Part E: Safety and Guardrails (45 mins)
 
-#### Activity 8.8: Setting Boundaries
+#### Activity 8.10: Setting Boundaries
 
 ```markdown
 # In CLAUDE.md
@@ -125,7 +153,7 @@ NEVER do automatically:
 - Access production systems
 ```
 
-#### Activity 8.9: Recovery Procedures
+#### Activity 8.11: Recovery Procedures
 
 ```
 Scenario: Claude made unwanted changes
